@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine, Rea?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: #ffe6e6;
+            overflow: hidden;
+        }
+
+        h1 {
+            color: #ff4d4d;
+            font-size: 36px;
+            margin-top: 50px;
+        }
+
+        .teddy-container {
+            position: relative;
+            display: inline-block;
+        }
+
+        .teddy {
+            width: 150px;
+            position: relative;
+            animation: hug 2s infinite alternate ease-in-out;
+        }
+
+        @keyframes hug {
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
+        }
+
+        .buttons {
+            margin-top: 20px;
+            position: relative;
+            display: inline-block;
+        }
+
+        button {
+            background-color: #ff4d4d;
+            color: white;
+            font-size: 18px;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            position: relative;
+        }
+
+        button:hover {
+            background-color: #ff1a1a;
+        }
+
+        #no {
+            position: absolute;
+            transition: all 0.3s ease;
+        }
+
+        #message {
+            font-size: 24px;
+            color: #ff4d4d;
+            margin-top: 20px;
+            display: none;
+            max-width: 80%;
+            margin-left: auto;
+            margin-right: auto;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Rea, will you be my Valentine? ❤️</h1>
+    
+    <div class="teddy-container">
+        <img class="teddy" src="https://i.imgur.com/6Tz7S5O.png" alt="Cute Teddy Hug">
+    </div>
+
+    <div class="buttons">
+        <button onclick="sayYes()">Yes!</button>
+        <button id="no" onmouseover="moveNo()">No 😢</button>
+    </div>
+
+    <p id="message"></p>
+
+    <script>
+        function sayYes() {
+            document.getElementById('message').innerText = "I fall for you more every day. I love the woman you are, and eternity doesn’t seem long enough if I’m spending it with you! ❤️";
+            document.getElementById('message').style.display = "block";
+        }
+
+        function moveNo() {
+            let x = Math.random() * (window.innerWidth - 200);
+            let y = Math.random() * (window.innerHeight - 100);
+            document.getElementById('no').style.left = x + "px";
+            document.getElementById('no').style.top = y + "px";
+        }
+    </script>
+
+</body>
+</html>
